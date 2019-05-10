@@ -49,7 +49,7 @@ public class MapHandler : MonoBehaviour
         Length = 9;
 
         GameMap = new MapItem[Length, Width]; //test map is 9 by 9 for testing reasons
-        GameMap[4, 4] = Instantiate(truckDepotPrefab, new Vector3(0, 0, 0), Quaternion.identity); //place the depot in the middle
+        GameMap[4, 4] = Instantiate(truckDepotPrefab, new Vector3(4, 0, 4), Quaternion.identity); //place the depot in the middle
 
         GameMap[3, 3] = Instantiate(roadPreFab, new Vector3(3, 0, 3), Quaternion.identity); //Now surround the depot with road. this should enable you to drive into the depot.
         GameMap[3, 4] = Instantiate(roadPreFab, new Vector3(3, 0, 4), Quaternion.identity);
@@ -76,7 +76,7 @@ public class MapHandler : MonoBehaviour
         GameMap[8, 0] = Instantiate(roadPreFab, new Vector3(8, 0, 0), Quaternion.identity);
         GameMap[8, 8] = Instantiate(roadPreFab, new Vector3(8, 0, 8), Quaternion.identity);
 
-        GameMap[4, 1] = Instantiate(roadPreFab, new Vector3(4, 0, 2), Quaternion.identity); //add a single accesspoint to the depot. ( a single point is enough for now )
+        GameMap[4, 1] = Instantiate(roadPreFab, new Vector3(4, 0, 1), Quaternion.identity); //add a single accesspoint to the depot. ( a single point is enough for now )
         GameMap[4, 2] = Instantiate(roadPreFab, new Vector3(4, 0, 2), Quaternion.identity);
 
         GameMap[1, 1] = Instantiate(buildingPreFabA, new Vector3(1, 0, 1), Quaternion.identity); //add buildings next to each corner

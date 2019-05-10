@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    Road TrashDumpLocation;
+    [SerializeField] Road TrashDumpLocation;
     // Start is called before the first frame update
     void Start()
     {
