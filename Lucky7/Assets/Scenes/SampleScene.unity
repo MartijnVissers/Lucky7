@@ -256,13 +256,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.49881613, y: -0.5011811, z: 0.49881613, w: 0.5011811}
+  m_LocalPosition: {x: 8, y: 21, z: 9.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.729004, y: -90, z: 0}
 --- !u!1001 &2735782230057412725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,5 +330,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: roadStraight
+      value: 
+      objectReference: {fileID: 3589867688999420652, guid: ad937a5c17fdcf244a63fc4be2e2d60b,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: roadCorner
+      value: 
+      objectReference: {fileID: 2632720846277205779, guid: 30c1a845432c4d04a9ec67b327383dd0,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: roadCrossRoad
+      value: 
+      objectReference: {fileID: 5097927444354469731, guid: 7359f98b40579f741b9edfbd4402a46e,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: roadTshape
+      value: 
+      objectReference: {fileID: 7701493526845552662, guid: 3d3b53fca58b73948bc3caafc9b99ccb,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: truckDepotPrefab
+      value: 
+      objectReference: {fileID: 3556189952703188193, guid: 1b3ddac19bd31994f8a94deab3d25cb8,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: parkPrefab
+      value: 
+      objectReference: {fileID: 1821690191142820704, guid: e1b4605cc2bef8a4590e73d4be350493,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8872c9189da3c654a8cbfc0587a9618e, type: 3}
