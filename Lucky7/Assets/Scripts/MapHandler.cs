@@ -15,8 +15,7 @@ public class MapHandler : MonoBehaviour
         UpperLeftCorner = 90, UpperRightCorner = 0, LowerRightCorner = 270, LowerLeftCorner = 180,
         CrossRoad = 0
     };
-    [SerializeField] private Text points;
-    [SerializeField] MapItem roadPreFab;
+    //[SerializeField] private Text points;
     [SerializeField] List<MapItem> housePrefabs;
     [SerializeField] MapItem parkPrefab;
     [SerializeField] MapItem truckDepotPrefab;

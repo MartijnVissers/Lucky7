@@ -502,7 +502,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1040727774441623981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,18 +532,18 @@ MonoBehaviour:
   - {fileID: 1040727774754859620}
   - {fileID: 1040727774183338891}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
-  m_MaximumSteerAngle: 25
-  m_SteerHelper: 0.644
-  m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 1200
-  m_ReverseTorque: 500
-  m_MaxHandbrakeTorque: 100000000
+  m_MaximumSteerAngle: 15
+  m_SteerHelper: 0.6
+  m_TractionControl: 0.35
+  m_FullTorqueOverAllWheels: 50
+  m_ReverseTorque: 25
+  m_MaxHandbrakeTorque: 20
   m_Downforce: 100
   m_SpeedType: 1
-  m_Topspeed: 90
+  m_Topspeed: 55
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
-  m_BrakeTorque: 20000
+  m_BrakeTorque: 30
 --- !u!114 &1040727774441623982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,8 +593,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  Score: 0
-  canvas: {fileID: 2003856377606909780, guid: 8ebccbc3545656f4d9de919dd812475f, type: 3}
 --- !u!1 &1040727774526956608
 GameObject:
   m_ObjectHideFlags: 0
@@ -8209,13 +8207,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7542815998149278620}
-  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 0.091, z: -0.373}
+  m_LocalRotation: {x: 0.36436534, y: -0.0023244142, z: 0.0015128801, w: 0.93125194}
+  m_LocalPosition: {x: 0.003, y: 0.346, z: -0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1040727775460802035}
   m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 42.737003, y: -0.252, z: 0.08800001}
 --- !u!20 &679921188020901085
 Camera:
   m_ObjectHideFlags: 0
