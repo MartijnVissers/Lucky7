@@ -1541,6 +1541,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
         type: 3}
+      propertyPath: ThrashPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: housePrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
       propertyPath: roadStraight
       value: 
       objectReference: {fileID: 3589867688999420652, guid: ad937a5c17fdcf244a63fc4be2e2d60b,
@@ -1586,5 +1596,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8197936682487236881, guid: 63593b18b352fc144b82b8570a752b88,
         type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: ThrashPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3277050828884921602, guid: 738bc3c1f61e8b84da45ec4c4105f5a5,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: InvisableWall
+      value: 
+      objectReference: {fileID: 5075075208606365036, guid: ab168a2ba2370e14b9969dc725fcfacf,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: housePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7444229087921487993, guid: f653a07804cb13949a8720149e477df6,
+        type: 3}
+    - target: {fileID: 2735782231997327754, guid: 8872c9189da3c654a8cbfc0587a9618e,
+        type: 3}
+      propertyPath: housePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8872c9189da3c654a8cbfc0587a9618e, type: 3}

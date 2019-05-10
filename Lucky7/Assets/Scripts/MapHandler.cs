@@ -22,6 +22,7 @@ public class MapHandler : MonoBehaviour
     [SerializeField] List<Trash> ThrashPrefabs;
     [SerializeField] GarbageTruck GarbageTruck;
     [SerializeField] Text pointstext;
+    [SerializeField] MapItem InvisableWall;
     private int Score;
 
     // some buildings should be able to spawn thrash on the street next to it.
@@ -49,7 +50,7 @@ public class MapHandler : MonoBehaviour
 
         //LoadTestingMap(); //this will instantiate a premade testing map.
         LoadGameMap(); //this will instantiate a premade playing map.
-
+        GenerateBorders();
         PlaceTruck(10, 12);
     }
 
@@ -432,6 +433,20 @@ public class MapHandler : MonoBehaviour
      *  Aditionally, the building will be allocated a road to dump trash on.
      *  If not placed next to a road, it will not be placed.
      */
+    void GenerateBorders()
+    {
+        for (int i = -1; i < 22; i++)
+        {
+            Instantiate(InvisableWall, new Vector3(i, 0, -1), Quaternion.identity);
+            Instantiate(InvisableWall, new Vector3(i, 0, 21), Quaternion.identity);
+        }
+        for (int j = -1; j < 22; j++)
+        {
+            Instantiate(InvisableWall, new Vector3(-1, 0, j), Quaternion.identity);
+            Instantiate(InvisableWall, new Vector3(21, 0, j), Quaternion.identity);
+        }
+    }
+
     void PlaceBuilding(int x, int y)
     {
         Road r = FindAdjacentRoad(x, y);
