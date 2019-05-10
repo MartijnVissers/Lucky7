@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class MapHandler : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class MapHandler : MonoBehaviour
         UpperLeftCorner = 90, UpperRightCorner = 0, LowerRightCorner = 270, LowerLeftCorner = 180,
         CrossRoad = 0
     };
+    [SerializeField] private Text points;
+    [SerializeField] MapItem roadPreFab;
     [SerializeField] List<MapItem> housePrefabs;
     [SerializeField] MapItem parkPrefab;
     [SerializeField] MapItem truckDepotPrefab;
     [SerializeField] List<Trash> ThrashPrefabs;
     [SerializeField] GarbageTruck GarbageTruck;
+    [SerializeField] Text pointstext;
+    private int Score;
 
     // some buildings should be able to spawn thrash on the street next to it.
 
@@ -38,6 +43,8 @@ public class MapHandler : MonoBehaviour
             Length = 10;
         }
         GameMap = new MapItem[Width, Length];
+        Score = 0;
+        pointstext.text = "Points: " + Score.ToString();
         //unless defined otherwise, we now have an 10 by 10 map.
         //it still has to be generated though.
 
@@ -512,5 +519,17 @@ public class MapHandler : MonoBehaviour
     void PlaceTruck(int x, int y)
     {
         Instantiate(GarbageTruck, new Vector3(x, 0, y), Quaternion.identity);
+    }
+
+    public void AddScore(int amount)
+    {
+        Score += amount;
+        pointstext.text = "Points: " + Score.ToString();
+    }
+
+    public void RemoveScore()
+    {
+        Score -= 100;
+        pointstext.text = "Points: " + Score.ToString();
     }
 }
