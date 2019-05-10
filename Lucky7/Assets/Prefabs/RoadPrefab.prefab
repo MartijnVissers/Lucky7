@@ -105,4 +105,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678661ff0d5e26e41b57012a58262574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefabs: []
+  trashPrefabs:
+  - {fileID: 5996014030151718685, guid: fe55266cac5abd247b2c0e9b55594279, type: 3}
