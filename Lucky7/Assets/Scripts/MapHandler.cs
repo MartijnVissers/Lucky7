@@ -38,7 +38,7 @@ public class MapHandler : MonoBehaviour
         //it still has to be generated though.
 
         //LoadTestingMap(); //this will instantiate a premade testing map.
-        LoadTestingMap(); //this will instantiate a premade playing map.
+        LoadGameMap(); //this will instantiate a premade playing map.
     }
 
     // Update is called once per frame
