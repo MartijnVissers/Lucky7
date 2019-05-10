@@ -5,19 +5,21 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     [SerializeField] Road TrashDumpLocation;
+    private float spawnProgress;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnProgress = 8;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float result = Random.Range(0, 10);
-        if( result < Time.deltaTime / 100 )
+        spawnProgress += Time.deltaTime;
+        if( spawnProgress > 10 )
         {
             DumpTrashOnRoad();
+            spawnProgress -= 10;
         }
     }
 

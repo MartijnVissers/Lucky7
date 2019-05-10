@@ -7,9 +7,10 @@ public class MapHandler : MonoBehaviour
 {
     [SerializeField] private int Width, Length;
     [SerializeField] MapItem roadPreFab;
-    [SerializeField] MapItem buildingPreFabA, buildingPreFabB, buildingPreFabC;
+    [SerializeField] List<MapItem> housePrefabs;
     [SerializeField] MapItem truckDepotPrefab;
     [SerializeField] List<Trash> ThrashPrefabs;
+    [SerializeField] GarbageTruck GarbageTruck;
 
     // some buildings should be able to spawn thrash on the street next to it.
 
@@ -80,6 +81,7 @@ public class MapHandler : MonoBehaviour
 
         PlaceRoad(4, 1);//add a single accesspoint to the depot. ( a single point is enough for now )
         PlaceRoad(4, 2);
+        PlaceTruck(4, 1);
 
         PlaceBuilding(1, 1);//add buildings next to each corner
         PlaceBuilding(1, 7);
@@ -96,9 +98,13 @@ public class MapHandler : MonoBehaviour
         Road r = FindAdjacentRoad(x, y);
         if( r != null )
         {
-            MapItem tmp = Instantiate(buildingPreFabA, new Vector3(x, 0, y), Quaternion.identity);
-            tmp.GetComponent<Building>().SetDumpLocation(r);
-            GameMap[x, y] = tmp;
+            if (housePrefabs.Count > 0 )
+            {
+                float result = Random.Range(0, housePrefabs.Count);
+                MapItem tmp = Instantiate(housePrefabs[Mathf.RoundToInt(result)], new Vector3(x, 0, y), Quaternion.identity);
+                tmp.GetComponent<Building>().SetDumpLocation(r);
+                GameMap[x, y] = tmp;
+            }
         }
     }
 
@@ -133,5 +139,10 @@ public class MapHandler : MonoBehaviour
         MapItem tmp = Instantiate(roadPreFab, new Vector3(x, 0, y), Quaternion.identity);
         tmp.GetComponent<Road>().trashPrefabs = ThrashPrefabs;
         GameMap[x, y] = tmp;
+    }
+
+    void PlaceTruck( int x, int y )
+    {
+        Instantiate(GarbageTruck, new Vector3(x, 0, y), Quaternion.identity);
     }
 }
