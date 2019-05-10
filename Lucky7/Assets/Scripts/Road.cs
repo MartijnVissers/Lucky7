@@ -9,7 +9,7 @@ public class Road : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trashPrefabs = new List<Trash>();
+
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Road : MonoBehaviour
         if( trashPrefabs.Count > 0 && trash == null )
         {
             float result = Random.Range(0, trashPrefabs.Count - 1);
-            trash = Instantiate(trashPrefabs[Mathf.RoundToInt(result)], gameObject.transform);
+            trash = Instantiate(trashPrefabs[Mathf.RoundToInt(result)], new Vector3( transform.position.x, transform.position.y, transform.position.z ), Quaternion.identity ); 
         }
         
     }
