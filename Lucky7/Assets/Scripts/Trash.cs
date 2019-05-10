@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    public enum trashType { GLASS = 0, METAL, PAPER, PLASTIC, BIO };
+    public enum trashType { GLASS = 0, METAL, PAPER, PLASTIC, BIO, EWASTE };
     public trashType type; //set this in inspector for the prefab.
     public int value;
     private float TimeSpan;

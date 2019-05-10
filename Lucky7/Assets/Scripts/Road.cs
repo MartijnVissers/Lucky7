@@ -22,7 +22,7 @@ public class Road : MonoBehaviour
     {
         if( trashPrefabs.Count > 0 && trash == null )
         {
-            float result = Random.Range(0, trashPrefabs.Count - 1);
+            float result = Random.Range(0, trashPrefabs.Count);
             trash = Instantiate(trashPrefabs[Mathf.RoundToInt(result)], new Vector3( transform.position.x, transform.position.y, transform.position.z ), Quaternion.identity ); 
         }
         
