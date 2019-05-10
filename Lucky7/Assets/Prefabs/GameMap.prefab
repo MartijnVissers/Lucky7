@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2735782231997327755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2735782231997327989}
+  - component: {fileID: 2735782231997327754}
+  m_Layer: 0
+  m_Name: GameMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2735782231997327989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735782231997327755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9289603, y: 0.7249546, z: -1.4793334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2735782231997327754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735782231997327755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47687e857aeae0147bd2458ba6c3f110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 0
+  Length: 0
+  roadPreFab: {fileID: 3589867688999420652, guid: ad937a5c17fdcf244a63fc4be2e2d60b,
+    type: 3}
+  housePrefabs:
+  - {fileID: 5075075208606365036, guid: 476f95ba6b911404b9cc9059bf252f34, type: 3}
+  - {fileID: 7444229087921487993, guid: f653a07804cb13949a8720149e477df6, type: 3}
+  truckDepotPrefab: {fileID: 4446516583773498947, guid: 1b3ddac19bd31994f8a94deab3d25cb8,
+    type: 3}
+  ThrashPrefabs:
+  - {fileID: 5996014030151718685, guid: fe55266cac5abd247b2c0e9b55594279, type: 3}
+  - {fileID: 9030631201051870654, guid: 741980c3dd8214947a2e4e5d135aca60, type: 3}
+  - {fileID: 8824868583062266722, guid: 82ca5ff8906093f45a81c77dc0590d06, type: 3}
+  - {fileID: 420544137540736468, guid: 09a9b24553a47094d9f645c66a6312e0, type: 3}
+  - {fileID: 1808204898338964334, guid: 93bd863f49872c946af9ddab6523d08b, type: 3}
+  - {fileID: 4584099860655398394, guid: 6b3fafa3fc8c2b64ba8073e8560f64e4, type: 3}
+  - {fileID: 7006754450720546111, guid: 020527fa00220d3469812975e648a314, type: 3}
+  - {fileID: 3277050828884921602, guid: 738bc3c1f61e8b84da45ec4c4105f5a5, type: 3}
+  GarbageTruck: {fileID: 5673685938916488706, guid: 1820eecd3ee4c11418aa5cdb59c462cd,
+    type: 3}
