@@ -50,7 +50,7 @@ public class MapHandler : MonoBehaviour
         //LoadTestingMap(); //this will instantiate a premade testing map.
         LoadGameMap(); //this will instantiate a premade playing map.
 
-        PlaceTruck(0, 0);
+        PlaceTruck(10, 12);
     }
 
     // Update is called once per frame

@@ -958,8 +958,10 @@ GameObject:
   - component: {fileID: 4856813573053046970}
   - component: {fileID: 371921039847803817}
   - component: {fileID: 7889657709745542727}
+  - component: {fileID: 6700580500102562085}
+  - component: {fileID: 6586245079466136626}
   m_Layer: 0
-  m_Name: BasePrefab
+  m_Name: TruckDepot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1086,6 +1088,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.051038146, y: 0.23838377, z: 0.05132544}
   m_Center: {x: -0.2303924, y: 0.11542916, z: -0.22902471}
+--- !u!65 &6700580500102562085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999627747039838124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49988395, y: 0.2795115, z: 0.49988374}
+  m_Center: {x: 0.0026696683, y: 0.13777278, z: -0.00088987354}
+--- !u!114 &6586245079466136626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999627747039838124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2600b93643142e943a9500f22789aa7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5999627747039838126
 GameObject:
   m_ObjectHideFlags: 0

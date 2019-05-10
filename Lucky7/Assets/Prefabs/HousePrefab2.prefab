@@ -2719,6 +2719,7 @@ GameObject:
   - component: {fileID: 4985091023875220400}
   - component: {fileID: 7444229087921487993}
   - component: {fileID: 8875855133885223715}
+  - component: {fileID: 1343710644612229897}
   m_Layer: 0
   m_Name: HousePrefab2
   m_TagString: Untagged
@@ -2862,8 +2863,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.2, z: 0.01}
-  m_Center: {x: 0, y: -0.005019279, z: 0}
+  m_Size: {x: 0.01, y: 0.011596776, z: 0.01}
+  m_Center: {x: 0, y: -0.0046218396, z: 0}
+--- !u!65 &1343710644612229897
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944401612964788042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009284543, y: 0.11334353, z: 0.009244798}
+  m_Center: {x: 0.000039744078, y: 0.057781745, z: -0.000019871592}
 --- !u!1 &4944401612964788044
 GameObject:
   m_ObjectHideFlags: 0

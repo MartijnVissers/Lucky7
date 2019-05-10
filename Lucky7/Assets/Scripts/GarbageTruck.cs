@@ -29,7 +29,6 @@ public class GarbageTruck : MonoBehaviour
             if( t.type == type )
             {
                 m.AddScore(t.value);
-
                 Destroy(t.gameObject);
             }
             else

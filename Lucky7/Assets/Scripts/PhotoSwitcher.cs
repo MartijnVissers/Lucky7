@@ -49,7 +49,7 @@ public class PhotoSwitcher : MonoBehaviour
     {
         canvas.enabled = false;
         Destroy(FindObjectOfType<GarbageTruck>().gameObject);
-        GameObject temp = Instantiate(Trucks[listitem], new Vector3(4, 0, 1.8f), Quaternion.identity);
+        GameObject temp = Instantiate(Trucks[listitem], new Vector3(10, 0, 8), Quaternion.identity);
         temp.transform.Rotate(new Vector3(0, 180, 0));
     }
 }
