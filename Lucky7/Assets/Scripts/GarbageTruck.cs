@@ -25,7 +25,7 @@ public class GarbageTruck : MonoBehaviour
         {
             if( t.type == type )
             {
-                AddScore();
+                AddScore(t.value);
                 Destroy(t.gameObject);
             }
             else
@@ -36,9 +36,9 @@ public class GarbageTruck : MonoBehaviour
         }
     }
 
-    public void AddScore()
+    public void AddScore(int amount)
     {
-        Score += 100;
+        Score += amount;
     }
 
     public void RemoveScore()
