@@ -9,6 +9,7 @@ public class MapHandler : MonoBehaviour
     [SerializeField] MapItem roadPreFab;
     [SerializeField] MapItem buildingPreFabA, buildingPreFabB, buildingPreFabC;
     [SerializeField] MapItem truckDepotPrefab;
+    [SerializeField] List<Trash> ThrashPrefabs;
 
     // some buildings should be able to spawn thrash on the street next to it.
 
@@ -49,40 +50,41 @@ public class MapHandler : MonoBehaviour
         Length = 9;
 
         GameMap = new MapItem[Length, Width]; //test map is 9 by 9 for testing reasons
-        GameMap[4, 4] = Instantiate(truckDepotPrefab, new Vector3(0, 0, 0), Quaternion.identity); //place the depot in the middle
+        GameMap[4, 4] = Instantiate(truckDepotPrefab, new Vector3(4, 0, 4), Quaternion.identity); //place the depot in the middle
 
-        GameMap[3, 3] = Instantiate(roadPreFab, new Vector3(3, 0, 3), Quaternion.identity); //Now surround the depot with road. this should enable you to drive into the depot.
-        GameMap[3, 4] = Instantiate(roadPreFab, new Vector3(3, 0, 4), Quaternion.identity);
-        GameMap[3, 5] = Instantiate(roadPreFab, new Vector3(3, 0, 5), Quaternion.identity);
+        PlaceRoad(3, 3);//Now surround the depot with road. this should enable you to drive into the depot.
+        PlaceRoad(3, 4);
+        PlaceRoad(3, 5);
 
-        GameMap[4, 3] = Instantiate(roadPreFab, new Vector3(4, 0, 3), Quaternion.identity);
-        GameMap[4, 4] = Instantiate(roadPreFab, new Vector3(4, 0, 4), Quaternion.identity);
-        GameMap[4, 5] = Instantiate(roadPreFab, new Vector3(4, 0, 5), Quaternion.identity);
+        PlaceRoad(4, 3);
+        PlaceRoad(4, 4);
+        PlaceRoad(4, 5);
 
-        GameMap[5, 3] = Instantiate(roadPreFab, new Vector3(5, 0, 3), Quaternion.identity);
-        GameMap[5, 4] = Instantiate(roadPreFab, new Vector3(5, 0, 4), Quaternion.identity);
-        GameMap[5, 5] = Instantiate(roadPreFab, new Vector3(5, 0, 5), Quaternion.identity);
+        PlaceRoad(5, 3);
+        PlaceRoad(5, 4);
+        PlaceRoad(5, 5);
 
         for(int i = 1; i < 8; i++ ) //instantiate all the borders with roads.
         {
-            GameMap[i, 0] = Instantiate(roadPreFab, new Vector3(i, 0, 0), Quaternion.identity);
-            GameMap[i, 0] = Instantiate(roadPreFab, new Vector3(i, 0, 8), Quaternion.identity);
+            PlaceRoad(i, 0);
+            PlaceRoad(i, 8);
 
-            GameMap[0, i] = Instantiate(roadPreFab, new Vector3(0, 0, i), Quaternion.identity);
-            GameMap[0, i] = Instantiate(roadPreFab, new Vector3(8, 0, i), Quaternion.identity);
+            PlaceRoad(0, i);
+            PlaceRoad(8, i);
         }
-        GameMap[0, 0] = Instantiate(roadPreFab, new Vector3(0, 0, 0), Quaternion.identity); //instantiate all corners with roads.
-        GameMap[0, 8] = Instantiate(roadPreFab, new Vector3(0, 0, 8), Quaternion.identity);
-        GameMap[8, 0] = Instantiate(roadPreFab, new Vector3(8, 0, 0), Quaternion.identity);
-        GameMap[8, 8] = Instantiate(roadPreFab, new Vector3(8, 0, 8), Quaternion.identity);
 
-        GameMap[4, 1] = Instantiate(roadPreFab, new Vector3(4, 0, 2), Quaternion.identity); //add a single accesspoint to the depot. ( a single point is enough for now )
-        GameMap[4, 2] = Instantiate(roadPreFab, new Vector3(4, 0, 2), Quaternion.identity);
+        PlaceRoad(0, 0);//instantiate all corners with roads.
+        PlaceRoad(0, 8);
+        PlaceRoad(8, 0);
+        PlaceRoad(8, 8);
 
-        GameMap[1, 1] = Instantiate(buildingPreFabA, new Vector3(1, 0, 1), Quaternion.identity); //add buildings next to each corner
-        GameMap[1, 7] = Instantiate(buildingPreFabA, new Vector3(1, 0, 7), Quaternion.identity);
-        GameMap[7, 1] = Instantiate(buildingPreFabA, new Vector3(7, 0, 1), Quaternion.identity);
-        GameMap[7, 7] = Instantiate(buildingPreFabA, new Vector3(7, 0, 7), Quaternion.identity);
+        PlaceRoad(4, 1);//add a single accesspoint to the depot. ( a single point is enough for now )
+        PlaceRoad(4, 2);
+
+        PlaceBuilding(1, 1);//add buildings next to each corner
+        PlaceBuilding(1, 7);
+        PlaceBuilding(7, 1);
+        PlaceBuilding(7, 7);
     }
 
     /*  This will place a building on GameMap[x,y]
@@ -94,7 +96,7 @@ public class MapHandler : MonoBehaviour
         Road r = FindAdjacentRoad(x, y);
         if( r != null )
         {
-            MapItem tmp = Instantiate(buildingPreFabA, new Vector3(x, 1, y), Quaternion.identity);
+            MapItem tmp = Instantiate(buildingPreFabA, new Vector3(x, 0, y), Quaternion.identity);
             tmp.GetComponent<Building>().SetDumpLocation(r);
             GameMap[x, y] = tmp;
         }
@@ -106,20 +108,30 @@ public class MapHandler : MonoBehaviour
      */
     Road FindAdjacentRoad( int x, int y )
     {
-        for( int i = x-1; i < x+1; i++ )
+        for( int i = x-1; i <= x+1; i++ )
         {
-            for( int j = y-1; j < y+1; y++ )
+            for( int j = y-1; j <= y+1; j++ )
             {
                 if( i >= 0 && i < Length && j >= 0 && j < Width )
                 {
-                    Road r = GameMap[i, j].GetComponent<Road>();
-                    if( r != null )
+                    if( GameMap[i,j] != null )
                     {
-                        return r;
+                        Road r = GameMap[i, j].GetComponent<Road>();
+                        if (r != null)
+                        {
+                            return r;
+                        }
                     }
                 }
             }
         }
         return null;
+    }
+
+    void PlaceRoad( int x, int y )
+    {
+        MapItem tmp = Instantiate(roadPreFab, new Vector3(x, 0, y), Quaternion.identity);
+        tmp.GetComponent<Road>().trashPrefabs = ThrashPrefabs;
+        GameMap[x, y] = tmp;
     }
 }
